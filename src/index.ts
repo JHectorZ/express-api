@@ -8,7 +8,6 @@ import { log } from 'console';
 const port = 8000;
 
 // Funcionalidades
-
 async function main() {
     await AppDataSource.initialize();
     console.log('[+] La base de datos se ha initalizado correctamente');
