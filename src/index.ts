@@ -1,16 +1,9 @@
 // Importamos los modulos
-import express from 'express';
-import morgan from 'morgan';
-import corns from 'cors'
 import 'reflect-metadata'
+import app from './app'
 
-// Hacemos la delacaracion de variables
-const app = express();
+// Declaracion de variables
 const port = 8000
-
-// Creacion y uso de los modulos morgan y cors
-app.use(morgan('dev'));
-app.use(corns())
 
 // Funcionalidades como escucha del puerto
 app.listen(port);
