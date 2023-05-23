@@ -2,10 +2,12 @@
 import 'reflect-metadata';
 import app from './app';
 import { AppDataSource } from './db';
-import { log } from 'console';
 
 // Declaracion de variables
 const port = 8000;
+
+// Importamos nuestros modulos
+import routerUser from './routes/user.routes'
 
 // Funcionalidades
 async function main() {
@@ -19,6 +21,7 @@ async function main() {
 main()
 
 
-
+// Enrutamiento
+app.use('/user', routerUser)
 
 

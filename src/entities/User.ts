@@ -13,6 +13,11 @@ export class User extends BaseEntity{
     @Column()
     lastname: string
 
+    @Column({
+        default: true
+    })
+    active: boolean
+
     @CreateDateColumn()
     created: Date
 }
