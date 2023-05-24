@@ -25,9 +25,9 @@ export const createUser = async (req: Request, res: Response) => {
 export const getUsers = async (req: Request, res: Response) => {
    try {
       const users = await User.find();
-      return res.json(users);
+      return res.status(200).json(users);
    } catch (error) {
-      return res.json({
+      return res.status(404).json({
          message: error
       })
 
@@ -41,16 +41,16 @@ export const updateUser = async (req: Request, res: Response) => {
       const dataId = parseInt(req.params.id);
       const user = await User.findOneBy({ id: dataId });
 
-      if (!user) return res.json({ message: "El usuario no existe" })
+      if (!user) return res.status(404).json({ message: "El usuario no existe" })
 
       user.firstname = firstname
       user.lastname = lastname
       user.save()
 
-      return res.json({message:"Ha sido actualizado el usuario"})
+      return res.status(204).json({message:"Ha sido actualizado el usuario"})
 
    } catch (error) {
-      return res.json({
+      return res.status(400).json({
          message: error
       });
    };
