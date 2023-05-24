@@ -15,4 +15,4 @@ router.put('/:id', updateUser);
 router.delete('/:id', deleteUser);
 
 // Exportamos router
-export default router;
+export default router; 
